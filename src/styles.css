@@ -56,6 +56,7 @@ body {
   font-family: sans-serif;
   margin: 20px;
   padding: 0;
+  background-color: skyblue;
 }
 
 .ScienceColumn {
@@ -63,7 +64,7 @@ body {
     right: 5px;
     width: 30%;
     text-align:left;
-
+	background-color: lightsteelblue;
 }
 
 li {
@@ -93,5 +94,5 @@ button {
 
 .anime-quote {
   margin: 20px;
-  width: 70%;
+  width: 66%;
 }

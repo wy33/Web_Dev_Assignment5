@@ -6,8 +6,6 @@ export default function ArticleList({ articles }) {
 			<li><a href={x.url}>{x.title}</a></li>
 		)
 	});
-	//console.log(articles);
-	//console.log(listItems);
 	return (
 		<div class="ScienceColumn">
 			<h1>Science News!</h1>

@@ -23,7 +23,7 @@ export default function Weather() {
                         <div className="weather-info">
                             <span>City: New York</span>
                             <span>Temperature: {weather.Temperature.Imperial.Value} Fahrenheit </span>
-                            <span>Percipitation: {weather.HasPercipitation === true ? "Yes" : "False"}</span>
+                            <span>Precipitation: {weather.HasPercipitation === true ? "Yes" : "None"}</span>
                             <span>Forecast: {weather.WeatherText}</span>
                         </div>
                     )}

@@ -1,3 +1,10 @@
-export default function Square() {
-  return <button className="square">X</button>;
+import Weather from "./Weather";
+
+export default function App() {
+  return (
+    <>
+      <Weather/>
+    </>
+  );
 }
+

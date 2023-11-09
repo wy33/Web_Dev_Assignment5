@@ -1,4 +1,4 @@
-# API Assignment
+# API Assignment - Neet Dashboard
 # Image API
 API Provider : Unsplash
 API Name : Unsplash API

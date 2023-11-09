@@ -9,8 +9,11 @@ export default function ArticleList({ articles }) {
 	//console.log(articles);
 	//console.log(listItems);
 	return (
-		<ul>
-			{listItems}
-		</ul>
+		<div class="ScienceColumn">
+			<h1>Science News!</h1>
+			<ul>
+				{listItems}
+			</ul>
+		</div>
 	);
 }

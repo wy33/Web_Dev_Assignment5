@@ -27,13 +27,13 @@ export default function Gallery() {
 
 	return (
 		<>
+			<ArticleList articles={articles} />
 			<h2>Weather & Anime Quote</h2>
-			<button onClick={handleGetQuoteClick}>Get Picture</button>
+			<button onClick={handleGetQuoteClick}>Get Anime Quote</button>
 			<button onClick={handleGetArticles}>Get Articles</button>
 			<h2>{quote.anime}</h2>
 			<h3>{quote.character}</h3>
 			<p>{quote.quote}</p>
-			<ArticleList articles={articles} />
 		</>
 	);
 }

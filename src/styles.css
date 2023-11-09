@@ -88,10 +88,10 @@ button {
   gap: 25px;
   align-items: center;
   font-size: 1.4rem;
+  width: 66%
 }
 
 .anime-quote {
-  position: absolute;
-  left: 0px;
-  width: 75%;
+  margin-top: 20px;
+  width: 70%;
 }

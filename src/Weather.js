@@ -6,7 +6,7 @@ export default function Weather() {
     async function getWeather() {
         const apiKey = "jZDyXHGKiLhcbj8YyDAWzQHLQBADGgIb"
         const locationKey = 349727
-        const apiUrl = `http://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}`
+        const apiUrl = `https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}`
         const response = await fetch(apiUrl);
         const weather = await response.json();
         setWeather(weather[0]);

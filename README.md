@@ -1,3 +1,6 @@
+# News API
+This API gets some recent headlines based on some parameters. I could have gone with everything, but I decided to cater it to the current audience, so it displays Science News for the US.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>

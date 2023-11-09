@@ -1,5 +1,6 @@
 import { useReducer, useState } from "react";
 import ArticleList from "./Articles.js";
+import Weather from "./Weather.js";
 
 export default function Gallery() {
 	const [quote, setQuote] = useState({ anime: null, character: null, quote: null });
@@ -49,6 +50,7 @@ export default function Gallery() {
 			<button onClick={handleGetQuoteClick}>Get Anime Quote</button>
 			<button onClick={handleGetArticles}>Get Articles</button>
 			<button onClick={handleGetImage}>Get Image</button>
+			<Weather/>
 			<h2>{quote.anime}</h2>
 			<h3>{quote.character}</h3>
 			<p>{quote.quote}</p>

@@ -52,10 +52,6 @@ export default function Gallery() {
 			<button onClick={handleGetArticles}>Get Articles</button>
 			<button onClick={handleGetImage}>Get Image</button>
 			<AnimeQuote details={quote}/>
-			{imagedata.imageUrl && <img src={imagedata.imageUrl} alt="Random Image" />}
-			<h2>{quote.anime}</h2>
-			<h3>{quote.character}</h3>
-			<p>{quote.quote}</p>
 			<Image imageUrl={imagedata.imageUrl} />
 		</>
 	);

@@ -1,5 +1,6 @@
 import { useReducer, useState } from "react";
 import ArticleList from "./Articles.js";
+import Weather from "./Weather.js";
 import AnimeQuote from "./AnimeQuote.js";
 import Image from "./Image.js"
 
@@ -51,6 +52,11 @@ export default function Gallery() {
 			<button onClick={handleGetQuoteClick}>Get Anime Quote</button>
 			<button onClick={handleGetArticles}>Get Articles</button>
 			<button onClick={handleGetImage}>Get Image</button>
+			<Weather/>
+			<h2>{quote.anime}</h2>
+			<h3>{quote.character}</h3>
+			<p>{quote.quote}</p>
+			{imagedata.imageUrl && <img src={imagedata.imageUrl} alt="Random Image" />}
 			<AnimeQuote details={quote}/>
 			<Image imageUrl={imagedata.imageUrl} />
 		</>

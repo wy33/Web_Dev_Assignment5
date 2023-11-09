@@ -21,3 +21,11 @@ Link to API documentation: https://animechan.xyz/
 
 Used API to pull a quote from an anime character at random. It is hilariously random, hopefully it doesn't retrieve
 anything that might get us in trouble.
+
+# Weather API
+API Provider: Accuweather
+API Name: Accuweather
+![Alt text](Capture.Png)
+Link to API documentation: https://developer.accuweather.com/apis
+
+This api display weather data for New York. This entire project is for any Neet living in New York that wants to know the weather, daily news, and some anime quotes to start his/her day.

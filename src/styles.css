@@ -89,3 +89,9 @@ button {
   align-items: center;
   font-size: 1.4rem;
 }
+
+.anime-quote {
+  position: absolute;
+  left: 0px;
+  width: 75%;
+}

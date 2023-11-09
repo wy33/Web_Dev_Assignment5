@@ -12,3 +12,12 @@ This API gets some recent headlines based on some parameters. I could have gone 
 
 ![image](https://github.com/wy33/Web_Dev_Assignment5/assets/24551155/3fd1372f-8e2f-4439-9bcc-f3c4d2d24edd)
 The above is a successful Postman call to said API. Here is a link to the documentation: https://newsapi.org/docs
+
+# Anime Quote API
+API Provider: Animechan
+API Name: Animechan
+![Alt text](anime_api.png)
+Link to API documentation: https://animechan.xyz/
+
+Used API to pull a quote from an anime character at random. It is hilariously random, hopefully it doesn't retrieve
+anything that might get us in trouble.

@@ -1,6 +1,8 @@
 import { useReducer, useState } from "react";
 import ArticleList from "./Articles.js";
 import Weather from "./Weather.js";
+import AnimeQuote from "./AnimeQuote.js";
+import Image from "./Image.js"
 
 export default function Gallery() {
 	const [quote, setQuote] = useState({ anime: null, character: null, quote: null });
@@ -32,7 +34,7 @@ export default function Gallery() {
 			if (data.urls && data.urls.regular) {
 			  setImageData({ ...imagedata, imageUrl: data.urls.regular });
 			} else {
-			  console.error("Image URL not found in the response.");
+			  console.error(error);
 			}
 		  })
 		.catch(error => console.error(error));
@@ -55,6 +57,9 @@ export default function Gallery() {
 			<h3>{quote.character}</h3>
 			<p>{quote.quote}</p>
 			{imagedata.imageUrl && <img src={imagedata.imageUrl} alt="Random Image" />}
+			<AnimeQuote details={quote}/>
+			<Image imageUrl={imagedata.imageUrl} />
 		</>
 	);
 }
+

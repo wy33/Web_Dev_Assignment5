@@ -7,7 +7,7 @@ export default function ArticleList({ articles }) {
 		//)
 	//});
 	return (
-		<div class="ScienceColumn">
+		<div className="ScienceColumn">
 			<h1>Science News!</h1>
 			<ul>
 				{articles && articles.map((article) => (

@@ -12,6 +12,7 @@ This API gets some recent headlines based on some parameters. I could have gone 
 
 ![image](https://github.com/wy33/Web_Dev_Assignment5/assets/24551155/3fd1372f-8e2f-4439-9bcc-f3c4d2d24edd)
 The above is a successful Postman call to said API. Here is a link to the documentation: https://newsapi.org/docs
+Error 426: NewsAPI (free keys) will only accept calls from localhost, all others will be rejected, so this only works when downloading and running locally.
 
 # Anime Quote API
 API Provider: Animechan

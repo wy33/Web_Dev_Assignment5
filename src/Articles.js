@@ -11,7 +11,7 @@ export default function ArticleList({ articles }) {
 			<h1>Science News!</h1>
 			<ul>
 				{articles && articles.map((article) => (
-					<li key={article.url}><a href={article.url}>{article.title}</a></li>
+					<li key={article.description}><a href={article.url}>{article.title}</a></li>
 				))}
 			</ul>
 		</div>

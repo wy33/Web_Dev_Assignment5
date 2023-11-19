@@ -1,7 +1,8 @@
 import { useReducer, useState } from "react";
+
 import ArticleList from "./Articles.js";
 import Weather from "./Weather.js";
-import AnimeQuote from "./AnimeQuote.js";
+import AnimeQuote from "./features/AnimeQuote/AnimeQuote.js";
 import Image from "./Image.js"
 
 export default function Gallery() {
@@ -14,12 +15,12 @@ export default function Gallery() {
 	const articleEndpoint = "https://en.wikipedia.org/api/rest_v1/page/random/summary";
 	const imageEndpoint = 'https://api.unsplash.com/photos/random?query=newyorkcity&client_id=0-afBKY6mwQSalPCH365npBnVfjKlYNL6bIwH9Zz8PY'
 
-	function handleGetQuoteClick() {
-		fetch(quoteEndpoint)
-			.then(response => response.json())
-			.then(json => setQuote(json))
-			.catch(error => console.error(error));
-	}
+	// function handleGetQuoteClick() {
+	// 	fetch(quoteEndpoint)
+	// 		.then(response => response.json())
+	// 		.then(json => setQuote(json))
+	// 		.catch(error => console.error(error));
+	// }
 	function handleGetArticles() {
 		fetch(articleEndpoint)
 			.then(response => response.json())
@@ -40,7 +41,7 @@ export default function Gallery() {
 		.catch(error => console.error(error));
 	}
 
-	console.log(quoteEndpoint);
+	// console.log(quoteEndpoint);
 	console.log(articleEndpoint);
 	console.log(article);
 	console.log(imageEndpoint)
@@ -53,7 +54,7 @@ export default function Gallery() {
 			<button onClick={handleGetArticles}>Get Article</button>
 			<button onClick={handleGetImage}>Get Image</button>
 			<Weather/>
-			<AnimeQuote details={quote}/>
+			<AnimeQuote/>
 			<Image imageUrl={imagedata.imageUrl} />
 		</>
 	);

@@ -6,12 +6,12 @@ import Image from "./Image.js"
 
 export default function Gallery() {
 	const [quote, setQuote] = useState({ anime: null, character: null, quote: null });
-	const [articles, setArticles] = useState([]);
+	const [article, setArticle] = useState({empty:true});
 	const [, forceUpdate] = useReducer(x => x + 1, 0);
 	const [imagedata, setImageData] = useState({ imageUrl: null });
 
 	const quoteEndpoint = 'https://animechan.xyz/api/random';
-	const articleEndpoint = "https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=7d0dd96cc13345e5ac2ea643830a09cc";
+	const articleEndpoint = "https://en.wikipedia.org/api/rest_v1/page/random/summary";
 	const imageEndpoint = 'https://api.unsplash.com/photos/random?query=newyorkcity&client_id=0-afBKY6mwQSalPCH365npBnVfjKlYNL6bIwH9Zz8PY'
 
 	function handleGetQuoteClick() {
@@ -23,7 +23,7 @@ export default function Gallery() {
 	function handleGetArticles() {
 		fetch(articleEndpoint)
 			.then(response => response.json())
-			.then(data => setArticles(data.articles))
+			.then(data => setArticle({ ...data }))
 			.catch(error => console.error(error));
 		//forceUpdate();
 	}
@@ -42,15 +42,15 @@ export default function Gallery() {
 
 	console.log(quoteEndpoint);
 	console.log(articleEndpoint);
-	console.log(articles);
+	console.log(article);
 	console.log(imageEndpoint)
 	
 	return (
 		<>
-			<ArticleList articles={articles} />
+			<ArticleList article={article} />
 			<h2>Weather & Anime Quote</h2>
 			<button onClick={handleGetQuoteClick}>Get Anime Quote</button>
-			<button onClick={handleGetArticles}>Get Articles</button>
+			<button onClick={handleGetArticles}>Get Article</button>
 			<button onClick={handleGetImage}>Get Image</button>
 			<Weather/>
 			<AnimeQuote details={quote}/>

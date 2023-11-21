@@ -4,6 +4,7 @@ import ArticleList from "./Articles.js";
 import Weather from "./Weather.js";
 import AnimeQuote from "./features/AnimeQuote/AnimeQuote.js";
 import Image from "./Image.js"
+import NavBar from "./Navbar.js";
 
 export default function Gallery() {
 	// const [quote, setQuote] = useState({ anime: null, character: null, quote: null });
@@ -48,6 +49,7 @@ export default function Gallery() {
 	
 	return (
 		<>
+			<NavBar/>
 			<ArticleList article={article} />
 			<h2>Weather & Anime Quote</h2>
 			{/* <button onClick={handleGetQuoteClick}>Get Anime Quote</button> */}

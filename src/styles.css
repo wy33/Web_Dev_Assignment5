@@ -6,8 +6,8 @@
 
 body {
   font-family: sans-serif;
-  margin: 20px;
   padding: 0;
+  position: relative;
 }
 
 h1 {
@@ -54,9 +54,13 @@ ul {
 
 body {
   font-family: sans-serif;
-  margin: 20px;
-  padding: 0;
   background-color: skyblue;
+}
+
+body::before {
+  display:block;
+  content: '';
+  height:60px; /* or whatever */
 }
 
 .ArticleColumn {
@@ -100,4 +104,45 @@ button {
 img {
 	margin: 20px;
 	width: 66%;
+}
+
+.navbar {
+  width: 100%;
+  height: 3rem;
+  position: fixed;
+  top: 0;
+	width: 100%;
+	margin: 0 auto;
+  background-color: white;
+  z-index: 9999;
+
+}
+
+.nav {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+
+  position: relative;
+}
+
+.nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
 }

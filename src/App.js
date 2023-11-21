@@ -1,7 +1,7 @@
 import { useReducer, useState } from "react";
 
 import ArticleList from "./Articles.js";
-import Weather from "./Weather.js";
+import Weather from "./features/Weather/Weather.js";
 import AnimeQuote from "./features/AnimeQuote/AnimeQuote.js";
 import Image from "./Image.js"
 import NavBar from "./Navbar.js";

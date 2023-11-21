@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { setWeather } from './WeatherSlice';
 
 export default function Weather() {
-    const [weather, setWeather] = useState(null); 
+	const weather = useSelector((state) => state.weather);
+	const dispatch = useDispatch();
 
     async function getWeather() {
         const apiKey = "jZDyXHGKiLhcbj8YyDAWzQHLQBADGgIb"
@@ -9,7 +11,7 @@ export default function Weather() {
         const apiUrl = `https://dataservice.accuweather.com/currentconditions/v1/${locationKey}?apikey=${apiKey}`
         const response = await fetch(apiUrl);
         const weather = await response.json();
-        setWeather(weather[0]);
+        dispatch(setWeather(weather[0]));
     }
 
     return (
@@ -19,12 +21,12 @@ export default function Weather() {
                 <button onClick={getWeather}>Get Weather</button>
                 </header>
                 <section> 
-                    {weather && (
+                    {weather.temperature != 0 && (
                         <div className="weather-info">
                             <span>City: New York</span>
-                            <span>Temperature: {weather.Temperature.Imperial.Value} Fahrenheit </span>
-                            <span>Precipitation: {weather.HasPercipitation === true ? "Yes" : "None"}</span>
-                            <span>Forecast: {weather.WeatherText}</span>
+                            <span>Temperature: {weather.temperature} Fahrenheit </span>
+                            <span>Precipitation: {weather.hasPercipitation === true ? "Yes" : "None"}</span>
+                            <span>Forecast: {weather.forecast}</span>
                         </div>
                     )}
                 </section>

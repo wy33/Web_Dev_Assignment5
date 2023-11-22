@@ -1,62 +1,29 @@
-import { useReducer, useState } from "react";
+// import { useReducer, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import ArticleList from "./features/Article/Articles.js";
 import Weather from "./features/Weather/Weather.js";
 import AnimeQuote from "./features/AnimeQuote/AnimeQuote.js";
 import Image from "./features/Image/Image.js"
 import NavBar from "./Navbar.js";
+import Home from "./Home.js";
 
 export default function Gallery() {
-	// const [quote, setQuote] = useState({ anime: null, character: null, quote: null });
-	//const [article, setArticle] = useState({empty:true});
-	const [, forceUpdate] = useReducer(x => x + 1, 0);
-	//const [imagedata, setImageData] = useState({ imageUrl: null });
-
-	// const quoteEndpoint = 'https://animechan.xyz/api/random';
-	// const articleEndpoint = "https://en.wikipedia.org/api/rest_v1/page/random/summary";
-	//const imageEndpoint = 'https://api.unsplash.com/photos/random?query=newyorkcity&client_id=0-afBKY6mwQSalPCH365npBnVfjKlYNL6bIwH9Zz8PY'
-
-	// function handleGetQuoteClick() {
-	// 	fetch(quoteEndpoint)
-	// 		.then(response => response.json())
-	// 		.then(json => setQuote(json))
-	// 		.catch(error => console.error(error));
-	// }
-	//function handleGetArticles() {
-	//	fetch(articleEndpoint)
-	//		.then(response => response.json())
-	//		.then(data => setArticle({ ...data }))
-	//		.catch(error => console.error(error));
-	//	//forceUpdate();
-	//}
-	//function handleGetImage() {
-	//	fetch(imageEndpoint)
-	//	.then(response => response.json())
-	//	.then(data => {
-	//		if (data.urls && data.urls.regular) {
-	//		  setImageData({ ...imagedata, imageUrl: data.urls.regular });
-	//		} else {
-	//		  console.error(error);
-	//		}
-	//	  })
-	//	.catch(error => console.error(error));
-	// }
-
-	// console.log(quoteEndpoint);
-	//console.log(articleEndpoint);
-	//console.log(article);
-	//console.log(imageEndpoint)
+	// const [, forceUpdate] = useReducer(x => x + 1, 0);
 	
 	return (
 		<>
-			<NavBar/>
-			<h2>Weather & Anime Quote</h2>
-			{/* <button onClick={handleGetQuoteClick}>Get Anime Quote</button> */}
-			{/*<button onClick={handleGetImage}>Get Image</button>*/}
-			<ArticleList />
-			<Weather/>
-			<AnimeQuote/>
-			<Image/>
+			<BrowserRouter>
+				<NavBar/>
+				<h2>Weather & Anime Quote</h2>
+				<Routes>
+					<Route exact path="/" element={<Home />}/>
+					<Route path="/articlelist" element={<ArticleList />}/>
+					<Route path="/weather" element={<Weather/>}/>
+					<Route path="/animequote" element={<AnimeQuote/>}/>
+					<Route path="/image" element={<Image />}/>
+				</Routes>
+			</BrowserRouter>
 		</>
 	);
 }

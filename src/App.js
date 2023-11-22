@@ -11,20 +11,20 @@ import Home from "./Home.js";
 export default function Gallery() {
 	// const [, forceUpdate] = useReducer(x => x + 1, 0);
 	
-	return (
-		<>
-			<BrowserRouter>
-				<NavBar/>
-				<h2>Weather & Anime Quote</h2>
-				<Routes>
-					<Route exact path="/" element={<Home />}/>
-					<Route path="/articlelist" element={<ArticleList />}/>
-					<Route path="/weather" element={<Weather/>}/>
-					<Route path="/animequote" element={<AnimeQuote/>}/>
-					<Route path="/image" element={<Image />}/>
-				</Routes>
-			</BrowserRouter>
-		</>
-	);
+    return (
+        <>
+            <BrowserRouter>
+                <NavBar/>
+                <Routes>
+                    <Route exact path="/" element={<><Home/></>}/>
+                    <Route path="/articlelist" element={<><h2>This button calls the API to give us a random article</h2><ArticleList /></>}/>
+                    <Route path="/weather" element={<><h2>This button calls the API to give us the weather in NYC</h2><Weather/></>}/>
+                    <Route path="/animequote" element={<><h2>This button calls the API to give us a random anime quote</h2><AnimeQuote/></>}/>
+                    <Route path="/image" element={<><h2>This button calls the API to give us a random picture of </h2><Image /></>}/>
+                </Routes>
+            </BrowserRouter>
+        </>
+    );
 }
+
 

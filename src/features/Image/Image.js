@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectImageUrl, setImageUrl } from './ImageSlice';
+import { Link, } from 'react-router-dom';
 
 export default function Image() {
   const dispatch = useDispatch();
@@ -13,7 +14,6 @@ export default function Image() {
       .then(response => response.json())
       .then(data => {
         if (data.urls && data.urls.regular) {
-          // Dispatch the action to set the image URL in the Redux store
           dispatch(setImageUrl(data.urls.regular));
         } else {
           console.error('Invalid image data format');
@@ -25,16 +25,12 @@ export default function Image() {
   return (
     <div>
       <h1>New York</h1>
+      <p>Click on image to see NYC's weather!</p>
       {imageUrl && (
-        <img src={imageUrl} alt="Random Image" />
+        <Link to="/weather">
+          <img src={imageUrl} alt="Random Image" />
+        </Link>
       )}
       <button onClick={handleGetImage}>Get Image</button>
     </div>
-  );
-}
-
-
-
-
-
-
+  );}

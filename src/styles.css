@@ -64,11 +64,20 @@ body::before {
 }
 
 .ArticleColumn {
-    position:absolute;
     right: 5px;
-    width: 30%;
-    text-align:left;
-	background-color: lightsteelblue;
+    text-align:center;
+}
+
+.ArticleImage {
+	width: 33%;
+	float: left;
+	left: 5px;
+}
+
+.ArticleText {
+	width: 60%;
+	float: left;
+	right:100px;
 }
 
 li {

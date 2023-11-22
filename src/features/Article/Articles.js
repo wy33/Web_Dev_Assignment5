@@ -15,12 +15,14 @@ export default function ArticleList() {
 			.then(data => dispatch(setArticle({ ...data })))
 			.catch(error => console.error(error));
 	};
+	if (article.empty) { getArticle(); }
 	if (article.empty) {
 		return (
 			<>
+				<h1>Random Article!</h1>
+				<p>On this page, you can find a random article blurb from Wikipedia! This will let you cycle through until you find one that interests you, then just click the title to follow it to the article itself!</p>
 				<button onClick={getArticle}>Get Article</button>
 				<div class="ArticleColumn">
-					<h1>Random Article!</h1>
 					<p>Hit get Article to get a Random Wikipedia Article!</p>
 				</div>
 			</>
@@ -28,13 +30,14 @@ export default function ArticleList() {
 	}
 	return (
 		<>
+			<h1>Random Article!</h1>
+			<p>On this page, you can find a random article blurb from Wikipedia! This will let you cycle through until you find one that interests you, then just click the title to follow it to the article itself!</p>
 			<button onClick={getArticle}>Get Article</button>
 			<div class="ArticleColumn">
-				<h1>Random Article!</h1>
-				<br/>
 				<a href={article.content_urls.desktop.page}><h3>{article.title}</h3></a>
-				<img src={article.thumbnail.source}/>
-				<p>{article.extract}</p>
+				<img src={article.thumbnail.source} class="ArticleImage" />
+				<br/>
+				<p class="ArticleText">{article.extract}</p>
 			</div>
 		</>
 	);

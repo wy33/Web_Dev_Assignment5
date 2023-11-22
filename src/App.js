@@ -17,6 +17,7 @@ export default function Gallery() {
 		  <h2>New York, Weather, Anime Quote, and Articles</h2>
 		  <Routes>
 			<Route exact path="/" element={<Home />}/>
+			<Route exact path="/Web_Dev_Assignment5" element={<Home />}/>
 			<Route path="/articlelist" element={<ArticleList />}/>
 			<Route path="/weather" element={<Weather/>}/>
 			<Route path="/animequote" element={<AnimeQuote/>}/>

@@ -7,6 +7,7 @@ import AnimeQuote from "./features/AnimeQuote/AnimeQuote.js";
 import Image from "./features/Image/Image.js"
 import NavBar from "./Navbar.js";
 import Home from "./Home.js";
+import ErrorPage from "./ErrorPage.js";
 
 export default function Gallery() {
 	// const [, forceUpdate] = useReducer(x => x + 1, 0);
@@ -22,6 +23,7 @@ export default function Gallery() {
 					<Route path="/weather" element={<Weather/>}/>
 					<Route path="/animequote" element={<AnimeQuote/>}/>
 					<Route path="/image" element={<Image />}/>
+					<Route path="*" element={<ErrorPage />}/>
 				</Routes>
 			</BrowserRouter>
 		</>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectImageUrl, setImageUrl } from './ImageSlice';
+import { Link, } from 'react-router-dom';
 
 export default function Image() {
   const dispatch = useDispatch();
@@ -26,15 +27,10 @@ export default function Image() {
     <div>
       <h1>New York</h1>
       {imageUrl && (
-        <img src={imageUrl} alt="Random Image" />
+        <Link to="/weather">
+          <img src={imageUrl} alt="Random Image" />
+        </Link>
       )}
       <button onClick={handleGetImage}>Get Image</button>
     </div>
-  );
-}
-
-
-
-
-
-
+  );}
